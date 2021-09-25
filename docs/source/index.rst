@@ -12,6 +12,8 @@ Welcome to yolov3's documentation!
 
   getting_started_rocm
   getting_started_directml
+  getting_started_rpi
+  training_custom_datasets
   apidocs
   cheatsheets
   code_explanation

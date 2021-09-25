@@ -67,7 +67,7 @@ Prepare conda environment:
 
     conda create --name extra2000-yolov3-tf-directml
     conda activate extra2000-yolov3-tf-directml
-    conda install python=3.6
+    conda install python=3.7
     conda install cython
     python -m pip install tensorflow-directml==1.15.5 argcomplete
 

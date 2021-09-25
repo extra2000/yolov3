@@ -1,0 +1,17 @@
+FROM docker.io/library/python:3.6-buster
+
+RUN python3 -m pip install --upgrade pip
+
+# Prerequisites for building documentations
+RUN python3 -m pip install sphinx sphinx-rtd-theme sphinx-rtd-dark-mode sphinxcontrib-napoleon sphinxcontrib-programoutput
+
+# Prerequisites for building
+RUN python3 -m pip install argcomplete tensorflow==1.15.5
+
+# Build source and install
+VOLUME /opt/yolov3-src
+COPY . /opt/yolov3-src/
+WORKDIR /opt/yolov3-src
+RUN python3 -m pip install .
+
+WORKDIR /opt/docs

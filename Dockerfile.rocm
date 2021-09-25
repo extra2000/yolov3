@@ -1,0 +1,13 @@
+FROM docker.io/rocm/tensorflow:rocm4.3.1-tf1.15-dev
+
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install argcomplete
+
+VOLUME /opt/yolov3-src
+COPY . /opt/yolov3-src/
+
+WORKDIR /opt/yolov3-src
+
+RUN python3 -m pip install .
+
+RUN register-python-argcomplete yolov3 >> ~/.bashrc

@@ -1,0 +1,13 @@
+FROM docker.io/tensorflow/tensorflow:1.15.5-py3
+
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install argcomplete
+
+VOLUME /opt/yolov3-src
+COPY . /opt/yolov3-src/
+
+WORKDIR /opt/yolov3-src
+
+RUN python3 -m pip install .
+
+RUN register-python-argcomplete yolov3 >> ~/.bashrc
